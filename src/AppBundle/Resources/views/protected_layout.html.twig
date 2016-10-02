@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ 'title_site'|trans }}</title>
+
+        {% block stylesheet %}
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/bootstrap-theme.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/maybourne.css') }}" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="main">
+            {% include '@App/header/header.html.twig' %}
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

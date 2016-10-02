@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+{#     <a class="navbar-brand">{{ 'title_header'|trans }}</a>#}
+    <div id="navbar">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="left-nav">
+            	<div class="navbar-brand">
+                    <a class="" href="{{ path('app_menu') }}">{{ 'title_header'|trans }}</a>
+            	</div>
+            </div>
+            <div class="right-nav">
+                <ul class="nav navbar-nav navbar-right nav-main">
+                    <li>
+                        <a href="{{ path('app_dashboard') }}">{{ 'title_dashboard'|trans }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_profile') }}">{{ 'title_settings'|trans }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</nav>

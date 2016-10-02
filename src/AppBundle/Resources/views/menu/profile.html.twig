@@ -1,0 +1,15 @@
+{% extends '@App/protected_layout.html.twig' %}
+{% block body %}
+
+{#     {{ knp_menu_render('AppBundle:Builder:mainMenu') }}#}
+    <div class="profile">
+        <form class="form-profile">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+{#             <div>{{ 'name'|trans }}&nbsp;:</div>#}
+{#             <div>{{ 'surname'|trans }}&nbsp;:</div>#}
+        {{ form_end(form) }}
+        </form>
+    </div>
+
+{% endblock %}
