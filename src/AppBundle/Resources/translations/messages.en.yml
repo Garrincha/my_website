@@ -1,6 +1,27 @@
-name: Name
-surname: Surname
-title_site: My website
-title_header: My website
-title_dashboard: Dashboard
-title_settings: Settings
+application:
+  profile:
+    label:
+      email: Email
+      password: Password
+      confirm_email: Confirm your email
+      confirm password: Confirm your password
+      name: Name
+      surname: Surname
+      birthdate: Birth date
+    button:
+      save: Save
+    placeholder:
+      birthdate: dd/MM/yyyy
+  layout:
+    title: My website
+    header: My website
+  menu:
+    dashboard: Dashboard
+    settings:
+      main: Settings
+      show: Show settings
+      edit: Edit settings
+    profile: 
+      main: Profile
+      show: Show profile
+      edit: Edit profile

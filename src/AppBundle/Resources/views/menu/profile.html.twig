@@ -1,15 +1,81 @@
 {% extends '@App/protected_layout.html.twig' %}
 {% block body %}
 
-{#     {{ knp_menu_render('AppBundle:Builder:mainMenu') }}#}
-    <div class="profile">
-        <form class="form-profile">
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-{#             <div>{{ 'name'|trans }}&nbsp;:</div>#}
-{#             <div>{{ 'surname'|trans }}&nbsp;:</div>#}
-        {{ form_end(form) }}
-        </form>
-    </div>
+<div class="profile">
+	{{ form_start(form, {'attr': {'class': 'form-profile dataForm form-horizontal'}, 'method': 'POST', 'action':path(app.request.attributes.get('_route'))}) }}
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.name, 'application.profile.label.name'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.name, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.name) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.firstname, 'application.profile.label.firstname'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.firstname, {'attr' : {'class': 'form-control'}}) }}
+        		{{ formbirthdateors(form.firstname) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.name, 'application.profile.label.birthdate'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.birthdate, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.birthdate) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.login, 'application.profile.label.login'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.login, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.login) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.email.first, 'application.profile.label.email'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.email.first, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.email.first) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.email.second, 'application.profile.label.confirm_email'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.email.second, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.email.second) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.password.first, 'application.profile.label.password'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.password.first, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.password.first) }}
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+    		{{ form_label(form.password.second, 'application.profile.label.confirm_password'|trans, {'label_attr' : {'class': 'col-sm-4 control-label'}}) }}
+    		</div>
+    		<div class="col-sm-4">
+    			{{ form_widget(form.password.second, {'attr' : {'class': 'form-control'}}) }}
+        		{{ form_errors(form.password.second) }}
+    		</div>
+    	</div>
+	{{ form_end(form) }}
+</div>
 
 {% endblock %}

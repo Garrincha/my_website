@@ -1,5 +1,4 @@
 <?php
-
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -14,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Profile
 {
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -22,19 +22,49 @@ class Profile
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @var string
+     *
+     * @ORM\Column(type="string", length=30)
+     * @Assert\NotBlank()
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank()
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank()
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=30)
      * @Assert\NotBlank()
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @var string
+     *
+     * @ORM\Column(type="string", length=30)
      * @Assert\NotBlank()
      */
     private $surname;
 
     /**
-     * @ORM\Column(type="date", length=100)
+     * @var \DateTime
+     *
+     * @ORM\Column(type="date")
      */
     private $birthdate;
 
@@ -119,4 +149,77 @@ class Profile
     {
         return $this->birthdate;
     }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Profile
+     *
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return Profile
+     *
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     *
+     * @return Profile
+     *
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+        return $this;
+    }
+
 }

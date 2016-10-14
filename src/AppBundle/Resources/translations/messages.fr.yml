@@ -1,6 +1,17 @@
-name: Nom
-surname: Prénom
+#forms
+label_name: Nom
+label_surname: Prénom
+label_birthdate: Date de naissance
+save_profile: Sauvegarder
+placeholder_birthdate: jj/MM/aaaa
+
+#navigation
 title_site: Mon site web
 title_header: Mon site web
 title_dashboard: Tableau de bord
 title_settings: Paramètres
+title_settings_show: Voir paramètres
+title_settings_edit: Editer paramètres
+title_profile: Profil
+title_profile_show: Voir profil
+title_profile_edit: Editer profil

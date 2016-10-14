@@ -1,5 +1,4 @@
 <?php
-
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -8,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+
     /**
      * @Route("/default", name="homepage")
      */
@@ -15,7 +15,7 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('@App/default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
+            'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..')
         ]);
     }
 }
